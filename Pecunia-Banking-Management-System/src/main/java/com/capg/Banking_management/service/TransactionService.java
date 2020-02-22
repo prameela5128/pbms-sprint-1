@@ -10,7 +10,7 @@ public interface TransactionService {
 	public boolean creditUsingCheque( String accountNumber,String payeeAccountNumber,  String chequeNumber,
 			String chequeBankName, String chequeIFSC, LocalDate chequeIssueDate, int amount);
 	public boolean debitUsingCheque(String accountNumber,  String chequeNumber, String chequeIFSC, LocalDate chequeIssueDate, int amount);
-	public boolean addAccountDetails(TransactionModel accountDetails );
+	//public boolean addAccountDetails(TransactionModel accountDetails );
 	
 	 
 	public double getBalanceByID(String accountNumber);

@@ -104,9 +104,9 @@ public class TransactionServiceImpl implements TransactionService{
 
 	 
 
-	public boolean addAccountDetails(TransactionModel accountDetails) {
- 		return transactionDAO.addAccountDetails(accountDetails);
-	}
+//	public boolean addAccountDetails(TransactionModel accountDetails) {
+// 		return transactionDAO.addAccountDetails(accountDetails);
+//	}
 
 	public boolean isValid(ChequeDetails c){
 		 

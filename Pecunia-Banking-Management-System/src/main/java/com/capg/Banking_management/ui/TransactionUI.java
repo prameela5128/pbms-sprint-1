@@ -21,15 +21,24 @@ public class TransactionUI {
 	static TransactionUsingChequeDAO transactionService=new TransactionUsingChequeDAOImpl();
 	static Random random=new Random();
 	static Scanner in=new Scanner(System.in);
-	public static void main(String []args) {
-		 
+	public static void main(String []args)   {
+		 try {
 		for(;;){
 			int choice;
-			System.out.println("Enter your choice");
-			System.out.println("1-Credit Using Cheque");
-			System.out.println("2-Debit Using Cheque");
-			System.out.println("3-Exit");
+			System.out.println("Enter your choice only shown below");
+			System.out.println("please enter-1 for Credit Using Cheque");
+			System.out.println("please enter-2 for Debit Using Cheque");
+			System.out.println("please enter-3 for-Exit");
+			 
 			choice=in.nextInt();
+			 
+			String f=String.valueOf(choice);
+		 
+		if(!f.matches("[1-3]{1}")) {
+			 
+				System.out.println("Invalid choice");
+			 } 
+		else {
 			switch(choice){
 			case 1:
 				try {
@@ -52,8 +61,19 @@ public class TransactionUI {
 				break;
 			
 			}
+			 }
+			
+		}  
+		 }
+		 
+		 catch( Exception e) {
+				System.out.println(e.getMessage());
+			}
+ 
+			
 		}
-	}
+		 
+ 
 	 
  	private static void creditUsingChequeInfo() throws AccountException, AmountLessException  {
 		 System.out.println("Enter payeeAccountNumber ");

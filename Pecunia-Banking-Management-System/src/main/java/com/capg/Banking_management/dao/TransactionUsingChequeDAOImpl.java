@@ -33,26 +33,25 @@ public class TransactionUsingChequeDAOImpl implements TransactionUsingChequeDAO{
 		
 	}
 
-	public boolean addAccountDetails(TransactionModel accountDetails) {
-		if(transactionModel.containsKey(accountDetails)) {
-			return false;
-		}
-		transactionModel.put(accountDetails.getAccountNumber(), accountDetails);
-		return true;
-	
-	}
-	public boolean getAccountDetailsByID(String accountNumber) {
-		if(!transactionModel.containsKey(accountNumber)) {
-			System.out.println("No Account Found");
-			return false;
-		}
-		TransactionModel bal=transactionModel.get(accountNumber);
-	 
-		
-		 return true;
-	}
-    
+//	public boolean addAccountDetails(TransactionModel accountDetails) {
+//		if(transactionModel.containsKey(accountDetails)) {
+//			return false;
+//		}
+//		transactionModel.put(accountDetails.getAccountNumber(), accountDetails);
+//		return true;
+//	
+//	}
+//	public boolean getAccountDetailsByID(String accountNumber) {
+//		if(!transactionModel.containsKey(accountNumber)) {
+//			System.out.println("No Account Found");
+//			return false;
+//		}
+//		TransactionModel bal=transactionModel.get(accountNumber);
 //	 
+//		
+//		 return true;
+//	}
+     
 	public double getBalanceByID(String accountNumber) {
 		if(!transactionModel.containsKey(accountNumber)) {
 			System.out.println("No Account Found");
