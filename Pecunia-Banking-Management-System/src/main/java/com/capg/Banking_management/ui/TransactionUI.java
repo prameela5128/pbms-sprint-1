@@ -26,14 +26,14 @@ public class TransactionUI {
 		for(;;){
 			int choice;
 			System.out.println("Enter your choice only shown below");
-			System.out.println(" 1 - Credit Using Cheque");
-			System.out.println(" 2 - Debit Using Cheque");
-			System.out.println(" 3 - Exit");
+			System.out.println("1 - Credit Using Cheque");
+			System.out.println("2 - Debit Using Cheque");
+			System.out.println("3 - Exit");
 			 
 			choice=in.nextInt();
 			 
 			String f=String.valueOf(choice);
-			if(f.matches("[1-3]{1}"))  {
+			if(!f.matches("[1-3]{1}"))  {
 				throw new Exception("Invalid choice");
 			}
 		 
@@ -93,7 +93,7 @@ public class TransactionUI {
 		 cd.setChequeBankName(chequeBankName);
 		 System.out.println("Enter Date");
 		 String date=in.next();
-		 DateTimeFormatter  format=DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		 DateTimeFormatter format=DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		 LocalDate chequeIssueDate=LocalDate.parse(date,format);
 		 cd.setChequeIssueDate(chequeIssueDate);
 		 boolean isValid=((TransactionServiceImpl) ts).isValid(cd);
